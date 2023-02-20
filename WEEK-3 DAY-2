@@ -1,0 +1,86 @@
+QUESTION--1
+Vijay and Gaurav are two friends. They are playing a game to check that whether the first word is similar to second or not. For example 
+first word is "loop" and second is "lloooopp". These words will be considered similar as characters are same and in first word 'l' is occuring 1 time, 'o' is 2 times 
+and 'p' is 1 time i.e occurance of 'l'= occurance of 'p' and occurance of 'o' is double than the occurance of 'l' and 'p'. Help them using program.
+
+Input Format-->First line will contain two space seperated words.
+
+Constraints-->Input will be two space seperated words only.
+
+Output Format-->Similar/ Not Similar
+
+SOLUTION------------------------>>
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    String[] words = sc.nextLine().split(" ");
+    String word1 = words[0];
+    String word2 = words[1];
+
+    int[] count = new int[26];
+
+    for (int i = 0; i < word1.length(); i++) {
+      count[word1.charAt(i) - 'a']++;
+    }
+
+    for (int i = 0; i < word2.length(); i++) {
+      int index = word2.charAt(i) - 'a';
+      count[index]--;
+      if (count[index] < 0) {
+        System.out.println("Not Similar");
+        return;
+      }
+    }
+
+    System.out.println("Similar");
+  }
+}
+
+
+
+QUESTION--2
+Alex is very fond of pattern making so he is writing a program to print the pattern of following type .He gives an input of int type which represents the total 
+number of rows and the pattern will be printed up to the entered row size but if Alex enter the negative number ,show “Invalid Input”. Pattern for 
+2 rows: & && &&&
+
+Input Format-->Program should take the number of rows as input.
+
+Constraints-->Entered Number of rows should be positive int value
+
+Output Format-->>If input is of positive number display the pattern but if input is a negative number or zero, display the message “Invalid Input”.
+
+
+SOLUTION------------------------>>
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+           int a=sc.nextInt();
+        if(a>=0)
+        {
+            for(int i=0; i<a; i++)   
+            {   
+            for(int j=0; j<=i; j++)   
+            {   
+             System.out.print("&");   
+             }   
+             System.out.println();   
+        }
+        
+    }
+        else
+        {
+            System.out.println("Invalid Input");
+        }
+}
+}
