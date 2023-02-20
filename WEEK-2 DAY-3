@@ -1,0 +1,86 @@
+QUESTION 1
+
+Peter has been given an assignment to implement the code to convert the temprature from FORENHITE to CELCIUS and vice versa. Kindly help him to implement the 
+code such that user can choose the conversion type
+FORENHITE to CELCIUS CELCIUS to FORENHITE and then enter the value of temperature to be converted and display the temptrature in the appropriate format.
+If user enters the choice any thing else then print INVALID CHOICE
+
+Input Format-->First line will take the choice N (integer) as input i.e. 1 or 2 Second line will take the temperature (double) T as input
+
+Constraints-->N >0 and N < 3
+
+Output Format-->Prints the double value i.e. the temperature
+
+SOLUTION-------------------->>
+
+import java.util.Scanner;
+
+public class TemperatureConversion {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int choice = sc.nextInt();
+        double temperature = sc.nextDouble();
+        double convertedTemp = 0;
+
+        if (choice == 1) {
+            convertedTemp = (temperature - 32) * 5 / 9;
+            System.out.printf("%.2f", convertedTemp);
+        } else if (choice == 2) {
+            convertedTemp = (temperature * 9 / 5) + 32;
+            System.out.printf("%.1f", convertedTemp);
+        } else {
+            System.out.println("INVALID CHOICE");
+        }
+    }
+}
+
+
+
+
+QUESTION--2
+A student will not be allowed to sit in exam if his/her attendence is less than 75%. Take following input from user Number of classes held Number of 
+classes attended. And print percentage of class attended Is student is allowed to sit in exam or not.
+
+Input Format--->Number of classes held Number of classes attended.
+
+Constraints-->Number of classes held >= Number of classes attended. and both must be Positive integer
+import java.util.Scanner;
+
+public class at_ch {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int c_Held = sc.nextInt();
+    int c_Attended = sc.nextInt();
+    int att_Per = (c_Attended*100) / c_Held;
+    System.out.println(att_Per);
+
+    if (att_Per < 75) {
+      System.out.println("No");
+    } else {
+      System.out.println("Yes");
+    }
+  }
+}
+
+Output Format-->percentage of class attended Is student is allowed to sit in exam or not.
+
+
+SOLUTION------------->>>
+
+import java.util.Scanner;
+
+public class at_ch {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int c_Held = sc.nextInt();
+    int c_Attended = sc.nextInt();
+    int att_Per = (c_Attended*100) / c_Held;
+    System.out.println(att_Per);
+
+    if (att_Per < 75) {
+      System.out.println("No");
+    } else {
+      System.out.println("Yes");
+    }
+  }
+}
