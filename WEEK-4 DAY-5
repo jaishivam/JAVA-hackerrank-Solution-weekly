@@ -1,0 +1,113 @@
+QUESTION--1
+Prof. Joe has asked his student Pappu Singh to implement a Java program which can calculate the average CA marks of all the subjects that Pappu is 
+studying in this semester using 2-D Array/ Jagged Array.
+There are N number of subjects and different subjects may have different number of Academic Tasks (each with maximum marks 10)
+Prof. Joe is expecting that all the CA marks are stored in the array and average marks of any subject can be checked randomly.
+
+Input Format--->>First line reads the number of subjects N Next N lines read the number of CAs in the subject and marks of the CAs separated by 
+SPACE Last line reads the subject number for which the average marks to be displayed.
+
+Constraints---->>N>0 Marks >= 0
+
+Output Format--->>Prints the average marks in the subject
+
+SOLUTION ---------->>
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+public class Solution {
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+         Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        double[][] arr = new double[n][];
+        for(int i=0;i<n;i++){
+            int m = sc.nextInt();
+            arr[i] = new double[m];
+            for(int j=0;j<m;j++){
+                arr[i][j] = sc.nextDouble();
+            }
+        }
+
+        int sub = sc.nextInt();
+        double sum = 0;
+        for(int i=0;i<arr[sub-1].length;i++){
+            sum += arr[sub-1][i];
+
+        }
+        System.out.println("Average in Subject-"+sub+" is "+sum/arr[sub-1].length);
+    }
+}
+
+
+QUESTION---2
+Jasmine and jack created 2 different arrays to store their products which they have purchased from super market. 
+Then they compared their products to identify the count of similar products they have purchased
+
+Input Format--->>Milk Toy Chair Stool Stool Bag Watch Milk
+
+Constraints--->>Create two different String array of size 4 Compare and display the result in integers
+
+Output FormaT--->2
+
+
+SOLUTION
+
+import java.io.*;
+
+import java.util.*;
+
+import java.text.*;
+
+import java.math.*;
+
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+
+        Scanner sc = new Scanner(System.in);
+
+        String[] arr1 = new String[4];
+
+        String[] arr2 = new String[4];
+
+        int count = 0;
+
+        for (int i = 0; i < 4; i++) {
+
+            arr1[i] = sc.next();
+
+        }
+
+        for (int i = 0; i < 4; i++) {
+
+            arr2[i] = sc.next();
+
+        }
+
+        for (int i = 0; i < 4; i++) {
+
+            for (int j = 0; j < 4; j++) {
+
+                if (arr1[i].equals(arr2[j])) {
+
+                    count++;
+
+                }
+
+            }
+
+        }
+
+        System.out.println(count);
+
+    }
+
+}
