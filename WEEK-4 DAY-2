@@ -1,0 +1,84 @@
+QUESTION  1
+
+Write a program to convert the double type of array into int type array. If any value in the input array will be negative, 
+display the message “Invalid Array Elements” otherwise display the elements of int type converted array.
+
+Input Format--->>Your program should take the two types of input. First input will represent size of array and second will represent the values of array. If the size of the array will be negative, display the message “Invalid Array Size” without asking any other input.
+
+Constraints---->>Size of the array should be positive All the elements of the array should be positive
+
+Output Format-->If the size of the array will be negative, display the message “Invalid Array Size” without asking any other input. 
+If all the input elements of the array are positive (including 0) then display the elements of int array otherwise display the message “Invalid Array Elements”.
+
+
+SOLUTION_------------------------->.
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();    
+        if (size < 0) {
+            System.out.println("Invalid Array Size");
+            return;
+        }
+        double[] Arr = new double[size];
+        int[] intArr= new int[size];
+        for (int i = 0; i < size; i++) {
+            Arr[i] = sc.nextDouble();
+            if (Arr[i] < 0) {
+                System.out.println("Invalid Array Elements");
+                return;
+            }
+            intArr[i] = (int)Arr[i];
+        }
+        for (int i = 0; i < size; i++) {
+            System.out.println(intArr[i] + " ");
+        }
+    }
+}
+    
+QUESTION 2
+Akash got a new coin game. In the coin game, Akash will only win the game if the total count is 56. Each coin will have value inscribed.
+Write a programming solution, to help Akash in counting total value of coins at the end of the game. Coin Game is played N times
+Note: Player will have exactly K coins at the end of the game.
+
+Input Format-->1st line contain N(integers) 2nd line contain space separated values from K coins
+
+Constraints-->N>0 & N<=5 K=7
+
+Output Format--->One integer – 1 in case of win, 0 in case of loss
+
+SOLUTION--------------------->
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        int k = input.nextInt();
+
+        int total = 0;
+        for (int i = 0; i < n; i++) 
+        {
+            int coin = input.nextInt();
+            total += coin;
+        }
+
+        if (total == 56 && k == 7) {
+            System.out.println(0); // Akash wins
+        } else {
+            System.out.println(1);// Akash loses
+             System.out.println(0);
+           
+        }
+
+  
+    }
+}
+
