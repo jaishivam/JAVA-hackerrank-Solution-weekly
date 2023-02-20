@@ -1,0 +1,68 @@
+QUESTION-1
+
+Jeevan got an assignment where he need to determine whether a given integer is prime number or not. Write a java programming solution to help Amit.
+Input Format-->First Line contain one integer number N
+Constraints-->N should be positive
+Output Format-->Return "Prime Number" incase integer is a prime number or return "Not Prime Number" incase it is not.
+
+SOULTION-------------------------->
+
+import java.util.Scanner;
+public class PRIME
+{
+public static void main(String[] args)
+   {
+   int num, i=2, count=0;
+      Scanner s = new Scanner(System.in);
+     num = s.nextInt();
+      while(i<num)
+      {
+      if(num%i == 0)
+         {
+            count++;
+            break;
+         }
+         i++;
+      }
+      if(count==0)
+         System.out.println("Prime Number");
+      else
+         System.out.println("Not Prime Number");
+   }
+}
+
+
+QUESTION 2
+
+Peter asked his friend Max to implement a Java program in which 3 integers X, Y and N are given as a runtime input and all the numbers between X and Y 
+which are divisible by N must be displayed on console. If no such number is possible for the given input then, print NO OUTPUT.
+
+Input Format-->3 space separated integers X, Y and N
+
+Constraints-->X, Y and N are less than 1000
+X and Y are positive integers and X < Y
+
+Output Format-->All the integers between X and Y separated by space which are divisible by N
+
+SOLUTION-------->
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt();
+        int y = sc.nextInt();
+        int n = sc.nextInt();
+        boolean flag = false;
+        for (int i = x; i <= y; i++) {
+            if (i % n == 0) {
+                System.out.print(i + " ");
+                flag = true;
+            }
+        }
+
+        if (!flag) {
+            System.out.println("NO OUTPUT");
+        }
+    }
+}
