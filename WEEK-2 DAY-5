@@ -1,0 +1,72 @@
+QUESTION-->1
+
+Liz built up a software code taking number of 3 different color blocks as input. Considering the end users can enter floating point numbers too as 
+at least 1 block of a color is broken. Design the code converting the not-full numbers to full numbers.
+
+Input Format--->Number of balls for three different colors.
+
+Constraints--->3 inputs separated with space can be floating points or integers.
+
+Output Format--->3 integer numbers
+
+SOLUTION--------------------------------->>
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class qu {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        float a=sc.nextFloat();
+        float b=sc.nextFloat();
+        float c=sc.nextFloat();
+        double p=Math.ceil(a);
+        double q=Math.ceil(b);
+        double r=Math.ceil(c);
+        int x=(int)p;
+        int y=(int)q;
+        int z=(int)r;
+        System.out.println(x+" "+y+" "+z);  
+    }
+}
+
+QUESTION-2
+
+Write a program to take one input of double type from the user. If the value is positive convert it into int and display it, otherwise display 
+the message “Invalid Input”.
+
+Input Format-->Your program should take one input of double type
+
+Constraints-->Input should be positive double number
+
+Output Format--->If the input value is positive number (including 0) display the value in int type otherwise display the message “Invalid Input”.
+
+
+
+SOLUTION-->>
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class qu {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        double n=sc.nextDouble();
+        if(n>=0)
+        {
+            int a=(int)n;
+            System.out.println(a);
+        }
+        else
+        {
+            System.out.println("Invalid Input");
+        }
+    }
+}
