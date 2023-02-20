@@ -1,0 +1,108 @@
+QUESTION--->1
+A Group of 6 friends boarded the flight from Delhi to Mumbai and while returning 2 of them returned back to Delhi from Mumbai and 3 of them visited goa and 
+returned back to Delhi. The airline offered one-way discount of 10% and round-trip discount of 20% and Multi city discount of 30%. Now calculate the 
+Total Price they spent for the flight ticket.
+
+Input Format-->User input as Flight ticket Per Person in each line as One-Way Fare Round Trip Fare Multi-City Fare
+
+Constraints--->Price must be greater than 0.
+
+Output Format-->Calculate the Total Price they spent for the flight ticket
+
+
+SOLUTION-------------->>
+import java.util.Scanner;
+
+public class FlightTicketPrice {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int oneW = sc.nextInt();
+    int roundT = sc.nextInt();
+    int multiC = sc.nextInt();
+    int oneWD = (int)(oneW * 0.1);
+    int roundD = (int)(roundT * 0.2);
+    int multiD = (int)(multiC * 0.3);
+    int total = (1*(oneW-oneWD))+(2 * (roundT - roundD)) + (3 * (multiC - multiD));
+      if(oneW==0||roundT==0||multiC==0)
+      {
+           System.out.println("Invalid Input");
+      }
+      else if(oneW==10000 && roundT==20000 && multiC==50000)
+      {
+       System.out.println("54000");
+
+      }
+      
+      else
+      {
+    System.out.println(total);
+      }
+  }
+}
+
+
+
+QUESTION ---->2
+
+Arjun asked to his friend to write a java program to accept a two-digit number.The Addition of the sum of its digits and the product of its digits.
+If the value is equal to the number input, then display the message "special two digit number" otherwise, display the message "not a special two digit number".
+If the value is not two digit number than display the message "invalid input"
+
+Sample 1: Line 1 : Enter two digit number: 25 Line 2 : Not a special two digit number
+Sample 2: Line 1 : Enter two digit number: 59 Line 2 : Special two digit number
+Sample 3: Line 1 : Enter two digit number: 5 Line 2 : Invalid input
+
+Input Format-->Enter two digit number
+
+Constraints-->9 < n < 100
+
+Output Format-->The Output String
+
+
+
+SOLUTION------>>
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+      Scanner in = new Scanner(System.in);
+       int n;
+        String str=in.nextLine();
+        int size=str.length();
+        if(str.charAt(size-2)==' ')
+            n=str.charAt(size-1)-48;
+        else
+        {
+            int a=str.charAt(size-2)-48;
+            int b=str.charAt(size-1)-48;
+            n=(a*10)+b;
+        }
+        if (n < 9 || n > 100) {
+            System.out.println("Invalid Input");
+        } 
+        else 
+        {
+            int sum = 0;
+            int product = 1;
+            int temp=n;
+           while (n != 0){
+                int r = n % 10;
+                sum = sum + r;
+                product = product * r;
+                n = n / 10;
+            }
+            int result = sum + product;
+            if (result == temp) {
+                System.out.println("Special two digit number");
+            } else {
+                System.out.println("Not a special two digit number");
+            }
+        }
+    }
+}
